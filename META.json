@@ -16,6 +16,7 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
+            "Devel::CheckLib" : 0,
             "ExtUtils::MakeMaker" : "6.30"
          }
       },
@@ -36,139 +37,151 @@
       "bugtracker" : {
          "web" : "https://github.com/AlexBio/String-CityHash/issues"
       },
+      "homepage" : "http://search.cpan.org/dist/String-CityHash/",
       "repository" : {
          "type" : "git",
          "url" : "git://github.com/AlexBio/String-CityHash.git",
          "web" : "https://github.com/AlexBio/String-CityHash"
       }
    },
-   "version" : "0.01",
+   "version" : "0.02",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
             "class" : "Dist::Zilla::Plugin::GatherDir",
-            "name" : "@Filter/@Basic/GatherDir",
+            "name" : "@Author::ALEXBIO/GatherDir",
             "version" : "4.200007"
          },
          {
             "class" : "Dist::Zilla::Plugin::PruneCruft",
-            "name" : "@Filter/@Basic/PruneCruft",
+            "name" : "@Author::ALEXBIO/PruneCruft",
             "version" : "4.200007"
          },
          {
             "class" : "Dist::Zilla::Plugin::ManifestSkip",
-            "name" : "@Filter/@Basic/ManifestSkip",
+            "name" : "@Author::ALEXBIO/ManifestSkip",
             "version" : "4.200007"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaYAML",
-            "name" : "@Filter/@Basic/MetaYAML",
+            "name" : "@Author::ALEXBIO/MetaYAML",
             "version" : "4.200007"
          },
          {
             "class" : "Dist::Zilla::Plugin::License",
-            "name" : "@Filter/@Basic/License",
+            "name" : "@Author::ALEXBIO/License",
             "version" : "4.200007"
          },
          {
             "class" : "Dist::Zilla::Plugin::Readme",
-            "name" : "@Filter/@Basic/Readme",
+            "name" : "@Author::ALEXBIO/Readme",
             "version" : "4.200007"
          },
          {
             "class" : "Dist::Zilla::Plugin::ExtraTests",
-            "name" : "@Filter/@Basic/ExtraTests",
+            "name" : "@Author::ALEXBIO/ExtraTests",
             "version" : "4.200007"
          },
          {
             "class" : "Dist::Zilla::Plugin::ExecDir",
-            "name" : "@Filter/@Basic/ExecDir",
+            "name" : "@Author::ALEXBIO/ExecDir",
             "version" : "4.200007"
          },
          {
             "class" : "Dist::Zilla::Plugin::ShareDir",
-            "name" : "@Filter/@Basic/ShareDir",
+            "name" : "@Author::ALEXBIO/ShareDir",
             "version" : "4.200007"
          },
          {
             "class" : "Dist::Zilla::Plugin::Manifest",
-            "name" : "@Filter/@Basic/Manifest",
+            "name" : "@Author::ALEXBIO/Manifest",
             "version" : "4.200007"
          },
          {
             "class" : "Dist::Zilla::Plugin::TestRelease",
-            "name" : "@Filter/@Basic/TestRelease",
+            "name" : "@Author::ALEXBIO/TestRelease",
             "version" : "4.200007"
          },
          {
             "class" : "Dist::Zilla::Plugin::ConfirmRelease",
-            "name" : "@Filter/@Basic/ConfirmRelease",
-            "version" : "4.200007"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::UploadToCPAN",
-            "name" : "@Filter/@Basic/UploadToCPAN",
+            "name" : "@Author::ALEXBIO/ConfirmRelease",
             "version" : "4.200007"
          },
          {
             "class" : "Dist::Zilla::Plugin::GitHub::Meta",
-            "name" : "@Filter/@GitHub/GitHub::Meta",
+            "name" : "@Author::ALEXBIO/@GitHub/GitHub::Meta",
             "version" : "0.09"
          },
          {
             "class" : "Dist::Zilla::Plugin::GitHub::Update",
-            "name" : "@Filter/@GitHub/GitHub::Update",
+            "name" : "@Author::ALEXBIO/@GitHub/GitHub::Update",
             "version" : "0.09"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
-            "name" : "@Filter/MetaConfig",
+            "name" : "@Author::ALEXBIO/MetaConfig",
             "version" : "4.200007"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaJSON",
-            "name" : "@Filter/MetaJSON",
+            "name" : "@Author::ALEXBIO/MetaJSON",
             "version" : "4.200007"
          },
          {
             "class" : "Dist::Zilla::Plugin::AutoPrereqs",
-            "name" : "@Filter/AutoPrereqs",
+            "name" : "@Author::ALEXBIO/AutoPrereqs",
             "version" : "4.200007"
          },
          {
             "class" : "Dist::Zilla::Plugin::PodVersion",
-            "name" : "@Filter/PodVersion",
+            "name" : "@Author::ALEXBIO/PodVersion",
             "version" : "4.200007"
          },
          {
             "class" : "Dist::Zilla::Plugin::PkgVersion",
-            "name" : "@Filter/PkgVersion",
+            "name" : "@Author::ALEXBIO/PkgVersion",
             "version" : "4.200007"
          },
          {
             "class" : "Dist::Zilla::Plugin::ChangelogFromGit",
-            "name" : "@Filter/ChangelogFromGit",
+            "name" : "@Author::ALEXBIO/ChangelogFromGit",
             "version" : "0.002"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Tag",
-            "name" : "@Filter/Git::Tag",
+            "name" : "@Author::ALEXBIO/Git::Tag",
             "version" : "1.111460"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Push",
-            "name" : "@Filter/Git::Push",
+            "name" : "@Author::ALEXBIO/Git::Push",
             "version" : "1.111460"
          },
          {
+            "class" : "Dist::Zilla::Plugin::UploadToCPAN",
+            "name" : "@Author::ALEXBIO/UploadToCPAN",
+            "version" : "4.200007"
+         },
+         {
             "class" : "Dist::Zilla::Plugin::InstallRelease",
-            "name" : "@Filter/InstallRelease",
+            "name" : "@Author::ALEXBIO/InstallRelease",
             "version" : "0.007"
          },
          {
             "class" : "Dist::Zilla::Plugin::Clean",
-            "name" : "@Filter/Clean",
+            "name" : "@Author::ALEXBIO/Clean",
             "version" : "0.02"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs" : {
+                  "phase" : "configure",
+                  "type" : "requires"
+               }
+            },
+            "name" : "ConfigureRequires",
+            "version" : "4.200007"
          },
          {
             "class" : "inc::MakeMaker",

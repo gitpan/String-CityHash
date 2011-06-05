@@ -1,6 +1,6 @@
 package String::CityHash;
 BEGIN {
-  $String::CityHash::VERSION = '0.01';
+  $String::CityHash::VERSION = '0.02';
 }
 
 use warnings;
@@ -19,7 +19,7 @@ String::CityHash - CityHash wrapper for Perl
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
@@ -32,7 +32,9 @@ version 0.01
 
     my $hash1 = cityhash64($str);
     my $hash2 = cityhash64($str, $seed0);
-    my $hash2 = cityhash64($str, $seed0, $seed1);
+    my $hash3 = cityhash64($str, $seed0, $seed1);
+
+    my $hash4 = cityhash128($str);
 
 =head1 DESCRIPTION
 
@@ -44,25 +46,25 @@ CityHash is intended to be fast, under the constraint that it hash very well.
 
 =head1 EXPORTS
 
-This module exports the subroutine C<cityhash64> on request.
+This module exports the subroutines C<cityhash64> and C<cityhash128> on request.
 
 =cut
 
 our @EXPORT_OK = qw(
 	cityhash64
+	cityhash128
 );
 
 =head1 SUBROUTINES
 
 =head2 cityhash64( $data [, $seed0 [, $seed1 ] ] )
 
-Generate the hash for the given data. The optional one or two 64-bit seeds are
-also hashed into the result.
+Generate a 64-bit hash for the given data. The optional one or two 64-bit seeds
+are also hashed into the result.
 
-=head1 ACKNOWLEDGMENTS
+=head2 cityhash128( $data )
 
-B<String::CityHash> currently supports only the C<CityHash64> family of
-functions. In the next future it will also support the C<CityHash128> family.
+Generate a 128-bit hash for the given data.
 
 =head1 AUTHOR
 

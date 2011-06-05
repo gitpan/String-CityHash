@@ -1,3 +1,43 @@
+==============================
+9999-99-99 99:99:99 +0000 HEAD
+==============================
+
+  commit c822f421cf206f0d8f7dfcd33808ee7c761c2e4e
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sun Jun 5 21:05:48 2011 +0200
+  
+    bump version
+
+  commit 897625ba526a8669923e0fcc40808375163ab86a
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sun Jun 5 21:05:04 2011 +0200
+  
+    update docs
+
+  commit 1b929f97f3e347395beabe72f1fff6857b5f8271
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sun Jun 5 21:02:40 2011 +0200
+  
+    clean-up
+
+  commit 0c6d37748773bc5dbe11f814432ecd53c42a4485
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sun Jun 5 19:53:03 2011 +0200
+  
+    add cityhash128
+
+  commit 75ae2f9f44923599e1d9d7219a8d7d8173339e7d
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sun Jun 5 19:59:26 2011 +0200
+  
+    re-enable Devel::CheckLib
+
+  commit c8deb2d330264d7525b011f724c487ff8bb28992
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sat Jun 4 14:34:01 2011 +0200
+  
+    use makemaker option of Author::ALEXBIO bundle 
+
 ===================================
 End of changes in the last 365 days
 ===================================

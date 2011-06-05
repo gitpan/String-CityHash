@@ -14,7 +14,8 @@ dist.ini
 inc/MakeMaker.pm
 lib/String/CityHash.pm
 t/00-load.t
-t/01-cityhash.t
+t/01-cityhash128.t
+t/01-cityhash64.t
 t/boilerplate.t
 t/manifest.t
 t/pod-coverage.t
