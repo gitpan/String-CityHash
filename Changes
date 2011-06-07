@@ -2,6 +2,28 @@
 9999-99-99 99:99:99 +0000 HEAD
 ==============================
 
+  commit 723682f6989309bb9321db46ce75c3d13e6ef95d
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Tue Jun 7 17:09:06 2011 +0200
+  
+    bump version
+
+  commit f471335c9f2bcfbd1b1b02023bf9da6889fc78b5
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Tue Jun 7 13:12:43 2011 +0200
+  
+    remove citycrc.h
+
+  commit 680bb1cb616be54cf66790c4439e3c3cb0a3eb9e
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Mon Jun 6 18:23:49 2011 +0200
+  
+    improve portability of the cityhash64 function 
+
+===============================
+2011-06-05 21:05:48 +0200 v0.02
+===============================
+
   commit c822f421cf206f0d8f7dfcd33808ee7c761c2e4e
   Author: Alessandro Ghedini <al3xbio@gmail.com>
   Date:   Sun Jun 5 21:05:48 2011 +0200

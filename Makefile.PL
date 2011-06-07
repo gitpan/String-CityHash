@@ -31,7 +31,7 @@ my %WriteMakefileArgs = (
     'Exporter' => '0',
     'XSLoader' => '0'
   },
-  'VERSION' => '0.02',
+  'VERSION' => '0.03',
   'XSOPT' => '-C++',
   'test' => {
     'TESTS' => 't/*.t'

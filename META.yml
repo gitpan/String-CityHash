@@ -21,7 +21,7 @@ resources:
   bugtracker: https://github.com/AlexBio/String-CityHash/issues
   homepage: http://search.cpan.org/dist/String-CityHash/
   repository: git://github.com/AlexBio/String-CityHash.git
-version: 0.02
+version: 0.03
 x_Dist_Zilla:
   plugins:
     -
@@ -75,11 +75,11 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::GitHub::Meta
       name: '@Author::ALEXBIO/@GitHub/GitHub::Meta'
-      version: 0.09
+      version: 0.10
     -
       class: Dist::Zilla::Plugin::GitHub::Update
       name: '@Author::ALEXBIO/@GitHub/GitHub::Update'
-      version: 0.09
+      version: 0.10
     -
       class: Dist::Zilla::Plugin::MetaConfig
       name: '@Author::ALEXBIO/MetaConfig'

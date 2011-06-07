@@ -44,7 +44,7 @@
          "web" : "https://github.com/AlexBio/String-CityHash"
       }
    },
-   "version" : "0.02",
+   "version" : "0.03",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
@@ -110,12 +110,12 @@
          {
             "class" : "Dist::Zilla::Plugin::GitHub::Meta",
             "name" : "@Author::ALEXBIO/@GitHub/GitHub::Meta",
-            "version" : "0.09"
+            "version" : "0.10"
          },
          {
             "class" : "Dist::Zilla::Plugin::GitHub::Update",
             "name" : "@Author::ALEXBIO/@GitHub/GitHub::Update",
-            "version" : "0.09"
+            "version" : "0.10"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",

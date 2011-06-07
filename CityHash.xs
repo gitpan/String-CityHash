@@ -13,6 +13,7 @@ cityhash64(message, ...)
 
 	PREINIT:
 		uint64 city;
+		std::ostringstream city_s;
 
 		STRLEN len;
 		const char *msg;
@@ -42,7 +43,9 @@ cityhash64(message, ...)
 			}
 		}
 
-		RETVAL = newSVuv(city);
+		city_s << city;
+
+		RETVAL = newSVpv(city_s.str().c_str(), 0);
 
 	OUTPUT:
 		RETVAL

@@ -1,6 +1,6 @@
 package String::CityHash;
 BEGIN {
-  $String::CityHash::VERSION = '0.02';
+  $String::CityHash::VERSION = '0.03';
 }
 
 use warnings;
@@ -19,7 +19,7 @@ String::CityHash - CityHash wrapper for Perl
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

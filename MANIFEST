@@ -9,7 +9,6 @@ Makefile.PL
 README
 city.cc
 city.h
-citycrc.h
 dist.ini
 inc/MakeMaker.pm
 lib/String/CityHash.pm
