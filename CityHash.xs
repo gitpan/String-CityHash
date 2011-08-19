@@ -2,6 +2,10 @@
 #include "perl.h"
 #include "XSUB.h"
 
+// prevent conflict with stdc++ functions
+#undef do_open
+#undef do_close
+
 #include <city.h>
 #include <sstream>
 
@@ -10,7 +14,7 @@ MODULE = String::CityHash		PACKAGE = String::CityHash
 SV *
 cityhash64(message, ...)
 	SV *message
-
+	PROTOTYPE: $;$$
 	PREINIT:
 		uint64 city;
 		std::ostringstream city_s;
@@ -54,6 +58,7 @@ SV *
 cityhash128(message)
 	SV *message
 
+	PROTOTYPE: $
 	PREINIT:
 		uint128 city;
 		std::ostringstream city_s;

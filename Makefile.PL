@@ -29,9 +29,11 @@ my %WriteMakefileArgs = (
   'OBJECT' => '$(O_FILES)',
   'PREREQ_PM' => {
     'Exporter' => '0',
-    'XSLoader' => '0'
+    'XSLoader' => '0',
+    'strict' => '0',
+    'warnings' => '0'
   },
-  'VERSION' => '0.03',
+  'VERSION' => '0.04',
   'XSOPT' => '-C++',
   'test' => {
     'TESTS' => 't/*.t'

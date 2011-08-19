@@ -2,6 +2,23 @@
 9999-99-99 99:99:99 +0000 HEAD
 ==============================
 
+  commit d243bfb2d29b23344deb1f96846d36e91831e28a
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Fri Aug 19 12:21:21 2011 +0200
+  
+    bump version
+
+  commit b407f114377d399607a7ef808adedda1c511d07b
+  Author: Ivan Nevostruev <halyava@gmail.com>
+  Date:   Thu Aug 18 18:17:15 2011 -0700
+  
+    adding perl prototypes, fix conflict between some perl and stdc++
+    marcos 
+
+===============================
+2011-06-07 17:09:06 +0200 v0.03
+===============================
+
   commit 723682f6989309bb9321db46ce75c3d13e6ef95d
   Author: Alessandro Ghedini <al3xbio@gmail.com>
   Date:   Tue Jun 7 17:09:06 2011 +0200
