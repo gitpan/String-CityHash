@@ -2,81 +2,33 @@
 9999-99-99 99:99:99 +0000 HEAD
 ==============================
 
-  commit d243bfb2d29b23344deb1f96846d36e91831e28a
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Fri Aug 19 12:21:21 2011 +0200
-  
-    bump version
+  [31mff51e74[m -[33m (HEAD, master)[m bump version [32m(2 days ago)[m
+  [31m20c2ea8[m -[33m[m update city.cc to version 1.0.3 [32m(2 days ago)[m
+  [31m67a5cfe[m -[33m[m remove cruft tests [32m(5 weeks ago)[m
+  [31m006b579[m -[33m[m fix code example in SYNOPSIS [32m(7 weeks ago)[m
+===============================
+2011-08-19 12:21:21 +0200 v0.04
+===============================
 
-  commit b407f114377d399607a7ef808adedda1c511d07b
-  Author: Ivan Nevostruev <halyava@gmail.com>
-  Date:   Thu Aug 18 18:17:15 2011 -0700
-  
-    adding perl prototypes, fix conflict between some perl and stdc++
-    marcos 
-
+  [31md243bfb[m -[33m (v0.04, origin/master, origin/HEAD)[m bump version [32m(8 weeks ago)[m
+  [31mb407f11[m -[33m[m adding perl prototypes, fix conflict between some perl and stdc++ marcos [32m(9 weeks ago)[m
 ===============================
 2011-06-07 17:09:06 +0200 v0.03
 ===============================
 
-  commit 723682f6989309bb9321db46ce75c3d13e6ef95d
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Tue Jun 7 17:09:06 2011 +0200
-  
-    bump version
-
-  commit f471335c9f2bcfbd1b1b02023bf9da6889fc78b5
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Tue Jun 7 13:12:43 2011 +0200
-  
-    remove citycrc.h
-
-  commit 680bb1cb616be54cf66790c4439e3c3cb0a3eb9e
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Mon Jun 6 18:23:49 2011 +0200
-  
-    improve portability of the cityhash64 function 
-
+  [31m723682f[m -[33m (v0.03)[m bump version [32m(4 months ago)[m
+  [31mf471335[m -[33m[m remove citycrc.h [32m(4 months ago)[m
+  [31m680bb1c[m -[33m[m improve portability of the cityhash64 function [32m(4 months ago)[m
 ===============================
 2011-06-05 21:05:48 +0200 v0.02
 ===============================
 
-  commit c822f421cf206f0d8f7dfcd33808ee7c761c2e4e
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Sun Jun 5 21:05:48 2011 +0200
-  
-    bump version
-
-  commit 897625ba526a8669923e0fcc40808375163ab86a
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Sun Jun 5 21:05:04 2011 +0200
-  
-    update docs
-
-  commit 1b929f97f3e347395beabe72f1fff6857b5f8271
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Sun Jun 5 21:02:40 2011 +0200
-  
-    clean-up
-
-  commit 0c6d37748773bc5dbe11f814432ecd53c42a4485
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Sun Jun 5 19:53:03 2011 +0200
-  
-    add cityhash128
-
-  commit 75ae2f9f44923599e1d9d7219a8d7d8173339e7d
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Sun Jun 5 19:59:26 2011 +0200
-  
-    re-enable Devel::CheckLib
-
-  commit c8deb2d330264d7525b011f724c487ff8bb28992
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Sat Jun 4 14:34:01 2011 +0200
-  
-    use makemaker option of Author::ALEXBIO bundle 
-
+  [31mc822f42[m -[33m (v0.02)[m bump version [32m(4 months ago)[m
+  [31m897625b[m -[33m[m update docs [32m(4 months ago)[m
+  [31m1b929f9[m -[33m[m clean-up [32m(4 months ago)[m
+  [31m0c6d377[m -[33m[m add cityhash128 [32m(4 months ago)[m
+  [31m75ae2f9[m -[33m[m re-enable Devel::CheckLib [32m(4 months ago)[m
+  [31mc8deb2d[m -[33m[m use makemaker option of Author::ALEXBIO bundle [32m(5 months ago)[m
 ===================================
 End of changes in the last 365 days
 ===================================

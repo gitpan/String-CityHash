@@ -1,6 +1,6 @@
 package String::CityHash;
 {
-  $String::CityHash::VERSION = '0.04';
+  $String::CityHash::VERSION = '0.05';
 }
 
 use warnings;
@@ -19,11 +19,11 @@ String::CityHash - CityHash wrapper for Perl
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 
-    use String::CityHash qw(cityhash64);
+    use String::CityHash qw(cityhash64 cityhash128);
 
     my $str = "Some string to be hashed";
 

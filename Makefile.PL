@@ -11,6 +11,8 @@ my %WriteMakefileArgs = (
   'ABSTRACT' => 'CityHash wrapper for Perl',
   'AUTHOR' => 'Alessandro Ghedini <alexbio@cpan.org>',
   'BUILD_REQUIRES' => {
+    'File::Find' => '0',
+    'File::Temp' => '0',
     'Test::More' => '0'
   },
   'CC' => 'g++',
@@ -33,7 +35,7 @@ my %WriteMakefileArgs = (
     'strict' => '0',
     'warnings' => '0'
   },
-  'VERSION' => '0.04',
+  'VERSION' => '0.05',
   'XSOPT' => '-C++',
   'test' => {
     'TESTS' => 't/*.t'
