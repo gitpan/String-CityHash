@@ -1,10 +1,10 @@
 package String::CityHash;
 {
-  $String::CityHash::VERSION = '0.05';
+  $String::CityHash::VERSION = '0.06';
 }
 
-use warnings;
 use strict;
+use warnings;
 
 require Exporter;
 
@@ -19,7 +19,7 @@ String::CityHash - CityHash wrapper for Perl
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -30,29 +30,40 @@ version 0.05
     my $seed0 = 0x9ae16a3b2f90404f;
     my $seed1 = 0xc3a5c85c97cb3130;
 
-    my $hash1 = cityhash64($str);
-    my $hash2 = cityhash64($str, $seed0);
-    my $hash3 = cityhash64($str, $seed0, $seed1);
+    my $hash1 = cityhash64($str);                 # as integer
+    my $hash2 = cityhash64($str, $seed0);         # as integer
+    my $hash3 = cityhash64($str, $seed0, $seed1); # as integer
 
-    my $hash4 = cityhash128($str);
+    my $hash4 = cityhash64_bits($str);            # 8-byte string holding int
+    my $hash5 = cityhash64_bits($str, $seed0);
+    my $hash6 = cityhash64_bits($str, $seed0, $seed1);
+
+    my ($l,$h) = cityhash128($str);               # low and high 64-bit parts,
+                                                  # as integers
+
+    my $hash7  = cityhash128_bits($str);          # 16-byte string holding low
+                                                  # then high 64-bit integers
 
 =head1 DESCRIPTION
 
-L<CityHash|http://code.google.com/p/cityhash/> is a family of non-cryptographic hash functions for strings. It
-provides hash functions designed for fast hashing of strings. The functions mix
-the input bits thoroughly but are not suitable for cryptography.
-
-CityHash is intended to be fast, under the constraint that it hash very well.
+L<CityHash|http://code.google.com/p/cityhash/> is a family of non-cryptographic
+hash functions for strings. It provides hash functions designed for fast hashing
+of strings. The functions mix the input bits thoroughly but are not suitable for
+cryptography. CityHash is intended to be fast, under the constraint that it
+hashes very well.
 
 =head1 EXPORTS
 
-This module exports the subroutines C<cityhash64> and C<cityhash128> on request.
+This module exports the subroutines C<cityhash64>, C<cityhash64_bits>,
+C<cityhash128> and C<cityhash128_bits> on request.
 
 =cut
 
 our @EXPORT_OK = qw(
 	cityhash64
+	cityhash64_bits
 	cityhash128
+	cityhash128_bits
 );
 
 =head1 SUBROUTINES
@@ -62,9 +73,26 @@ our @EXPORT_OK = qw(
 Generate a 64-bit hash for the given data. The optional one or two 64-bit seeds
 are also hashed into the result.
 
+=head2 cityhash64_bits( $data [, $seed0 [, $seed1 ] ] )
+
+Likewise, but returns 8-byte binary string of hash in network byte order.
+
 =head2 cityhash128( $data )
 
-Generate a 128-bit hash for the given data.
+Generate a 128-bit hash for the given data. Returns list of the low and high
+64-bit portions of the hash. In scalar context returns only the low portion.
+
+=head2 cityhash128_bits( $data )
+
+Generate a 128-bit hash for the given data. Returns 16-byte binary string
+containing the low 64 bits then high 64 bits; each 8-byte portion is in network
+byte order. Extract with e.g. C<unpack 'Q>2'>.
+
+=head1 ACKNOWLEDGMENTS
+
+Since version 0.06 C<cityhash128> returns either a list of the high and low
+portions of the 128-bit hash (in list context), or only the 64-bit low portion
+of the hash (in scalar context).
 
 =head1 AUTHOR
 

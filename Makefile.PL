@@ -35,7 +35,7 @@ my %WriteMakefileArgs = (
     'strict' => '0',
     'warnings' => '0'
   },
-  'VERSION' => '0.05',
+  'VERSION' => '0.06',
   'XSOPT' => '-C++',
   'test' => {
     'TESTS' => 't/*.t'

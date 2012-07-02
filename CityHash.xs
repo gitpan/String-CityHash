@@ -7,72 +7,114 @@
 #undef do_close
 
 #include <city.h>
-#include <sstream>
+
+#if IVSIZE >= 8
+#  define CITY_GET128(SV)    SvUV(SV)
+#  define CITY_SET128(SV,N)  (SV) = newSVuv(N)
+#else
+#  include <stdlib.h>
+#  include <sstream>
+#  define CITY_GET128(SV)    strtoull(SvPV_nolen((SV), NULL, 0)
+#  define CITY_SET128(SV,N)  { std::ostringstream os; os << (N); (SV) = newSVpv(os.str().c_str(), 0); }
+#endif
+
+#define swab64(x) \
+    ( (((uint64)(x) & 0x00000000000000ff) << 56) | \
+      (((uint64)(x) & 0x000000000000ff00) << 40) | \
+      (((uint64)(x) & 0x0000000000ff0000) << 24) | \
+      (((uint64)(x) & 0x00000000ff000000) <<  8) | \
+      (((uint64)(x) & 0x000000ff00000000) >>  8) | \
+      (((uint64)(x) & 0x0000ff0000000000) >> 24) | \
+      (((uint64)(x) & 0x00ff000000000000) >> 40) | \
+      (((uint64)(x) & 0xff00000000000000) >> 56) )
+
+#if BYTEORDER == 0x1234 || BYTEORDER == 0x12345678
+#  define CITY_BIGENDIAN(x)  swab64(x)
+#elif BYTEORDER == 0x4321 || BYTEORDER == 0x87654321
+#  define CITY_BIGENDIAN(x)  (x)
+#else
+#  error invalid byte order BYTEORDER
+#endif
 
 MODULE = String::CityHash		PACKAGE = String::CityHash
 
 SV *
 cityhash64(message, ...)
 	SV *message
-	PROTOTYPE: $;$$
-	PREINIT:
-		uint64 city;
-		std::ostringstream city_s;
 
-		STRLEN len;
-		const char *msg;
+	PROTOTYPE: $;$$
+	ALIAS:
+		cityhash64_bits = 1
 	CODE:
-		SvGETMAGIC(message);
-		msg = SvPV(message, len);
+		uint64 city;
+		STRLEN len;
+		const char *msg = SvPVbyte(message, len);
 
 		switch (items) {
+			case 1: {
+				city = CityHash64(msg, len);
+				break;
+			}
 
 			case 2: {
-				uint64 seed0 = SvUV(ST(1));
+				uint64 seed0 = CITY_GET128(ST(1));
 
 				city = CityHash64WithSeed(msg, len, seed0);
 				break;
 			}
 
-			case 3: {
-				uint64 seed0 = SvUV(ST(1));
-				uint64 seed1 = SvUV(ST(2));
+			default: {
+				uint64 seed0 = CITY_GET128(ST(1));
+				uint64 seed1 = CITY_GET128(ST(2));
 
 				city = CityHash64WithSeeds(msg, len, seed0, seed1);
 				break;
 			}
-
-			default: {
-				city = CityHash64(msg, len);
-			}
 		}
 
-		city_s << city;
-
-		RETVAL = newSVpv(city_s.str().c_str(), 0);
+		if (!ix) {
+			CITY_SET128(RETVAL, city);
+		} else {
+			uint64 ret = CITY_BIGENDIAN(city);
+			RETVAL = newSVpvn((const char *)&ret, sizeof ret);
+		}
 
 	OUTPUT:
 		RETVAL
 
 SV *
+cityhash128_bits(message)
+	SV *message
+
+	PROTOTYPE: $
+	CODE:
+		STRLEN len;
+		const char *msg = SvPVbyte(message, len);
+
+		uint128 city = CityHash128(msg, len);
+
+		uint64 ret[2];
+
+		ret[0] = CITY_BIGENDIAN(Uint128Low64(city));
+		ret[1] = CITY_BIGENDIAN(Uint128High64(city));
+
+		RETVAL = newSVpvn((const char *)&ret, sizeof ret);
+
+	OUTPUT:
+		RETVAL
+
+void
 cityhash128(message)
 	SV *message
 
 	PROTOTYPE: $
-	PREINIT:
-		uint128 city;
-		std::ostringstream city_s;
-
+	PPCODE:
 		STRLEN len;
-		const char *msg;
-	CODE:
-		SvGETMAGIC(message);
-		msg = SvPV(message, len);
+		const char *msg = SvPVbyte(message, len);
 
-		city = CityHash128(msg, len);
-		city_s << Uint128Low64(city) << Uint128High64(city);
+		uint128 city = CityHash128(msg, len);
 
-		RETVAL = newSVpv(city_s.str().c_str(), 0);
+		mXPUSHu(Uint128Low64(city));
 
-	OUTPUT:
-		RETVAL
+		if (GIMME == G_ARRAY)
+			mXPUSHu(Uint128High64(city));
