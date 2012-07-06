@@ -48,7 +48,7 @@
          "web" : "https://github.com/AlexBio/String-CityHash"
       }
    },
-   "version" : "0.06",
+   "version" : "0.07",
    "x_Dist_Zilla" : {
       "plugins" : [
          {

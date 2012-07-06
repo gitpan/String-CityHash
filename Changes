@@ -1,9 +1,37 @@
 ==================================================
-Changes from 2011-07-03 00:00:00 +0000 to present.
+Changes from 2011-07-07 00:00:00 +0000 to present.
 ==================================================
 
 -----------------------------------------
-version 0.06 at 2012-07-02 17:27:24 +0000
+version 0.07 at 2012-07-06 09:49:35 +0000
+-----------------------------------------
+
+  Change: 15f25eccbaf6b727686a570553fd21f3d959c0e1
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-07-06 11:48:33 +0000
+
+    CityHash.pm: add export tags :all, :cityhash64 and :cityhash128 
+
+  Change: 9e5e1fe69976e316d4916aa6cd67d7b75489b9b7
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-07-06 11:41:40 +0000
+
+    CityHash.pm: minor fix in SYNOPSIS 
+
+  Change: ad114a229df5090d090bac13e300b7ad4ae0bd15
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-07-06 11:36:49 +0000
+
+    CityHash.xs: rename CITY_{G,S}ET128 -> CITY_{G,S}ET64 
+
+  Change: f11211ead8200707df7ac30eb5aee2b5268f12e6
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-07-06 11:35:03 +0000
+
+    CityHash.xs: include ppport.h 
+
+-----------------------------------------
+version 0.06 at 2012-07-02 16:03:32 +0000
 -----------------------------------------
 
   Change: 217c70a71515f0ff513a2676d222318197ce31fe
@@ -127,5 +155,5 @@ version 0.04 at 2011-08-19 10:21:21 +0000
     marcos 
 
 ================================================
-Plus 3 releases after 2011-07-03 00:00:00 +0000.
+Plus 3 releases after 2011-07-07 00:00:00 +0000.
 ================================================

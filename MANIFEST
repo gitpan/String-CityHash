@@ -12,6 +12,7 @@ city.h
 dist.ini
 inc/MakeMaker.pm
 lib/String/CityHash.pm
+ppport.h
 t/00-compile.t
 t/01-cityhash128.t
 t/01-cityhash64.t

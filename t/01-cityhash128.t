@@ -2,7 +2,7 @@
 
 use Test::More tests => 4;
 
-use String::CityHash qw(cityhash128 cityhash128_bits);
+use String::CityHash qw(:cityhash128);
 
 my $str1 = 'test';
 is(join(',', cityhash128($str1)), '18000716877616051849,10580728449884026697');

@@ -1,6 +1,6 @@
 package String::CityHash;
 {
-  $String::CityHash::VERSION = '0.06';
+  $String::CityHash::VERSION = '0.07';
 }
 
 use strict;
@@ -19,11 +19,11 @@ String::CityHash - CityHash wrapper for Perl
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 
-    use String::CityHash qw(cityhash64 cityhash128);
+    use String::CityHash qw(:all);
 
     my $str = "Some string to be hashed";
 
@@ -31,8 +31,8 @@ version 0.06
     my $seed1 = 0xc3a5c85c97cb3130;
 
     my $hash1 = cityhash64($str);                 # as integer
-    my $hash2 = cityhash64($str, $seed0);         # as integer
-    my $hash3 = cityhash64($str, $seed0, $seed1); # as integer
+    my $hash2 = cityhash64($str, $seed0);
+    my $hash3 = cityhash64($str, $seed0, $seed1);
 
     my $hash4 = cityhash64_bits($str);            # 8-byte string holding int
     my $hash5 = cityhash64_bits($str, $seed0);
@@ -64,6 +64,12 @@ our @EXPORT_OK = qw(
 	cityhash64_bits
 	cityhash128
 	cityhash128_bits
+);
+
+our %EXPORT_TAGS = (
+	all         => [@EXPORT_OK],
+	cityhash64  => [qw(cityhash64 cityhash64_bits)],
+	cityhash128 => [qw(cityhash128 cityhash128_bits)]
 );
 
 =head1 SUBROUTINES

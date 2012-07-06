@@ -2,7 +2,7 @@
 
 use Test::More tests => 12;
 
-use String::CityHash qw(cityhash64 cityhash64_bits);
+use String::CityHash qw(:cityhash64);
 
 my $seed0 = 12345;
 my $seed1 = 54321;

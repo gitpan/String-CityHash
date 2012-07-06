@@ -1,6 +1,7 @@
 #include "EXTERN.h"
 #include "perl.h"
 #include "XSUB.h"
+#include "ppport.h"
 
 // prevent conflict with stdc++ functions
 #undef do_open
@@ -9,13 +10,13 @@
 #include <city.h>
 
 #if IVSIZE >= 8
-#  define CITY_GET128(SV)    SvUV(SV)
-#  define CITY_SET128(SV,N)  (SV) = newSVuv(N)
+#  define CITY_GET64(SV)    SvUV(SV)
+#  define CITY_SET64(SV,N)  (SV) = newSVuv(N)
 #else
 #  include <stdlib.h>
 #  include <sstream>
-#  define CITY_GET128(SV)    strtoull(SvPV_nolen((SV), NULL, 0)
-#  define CITY_SET128(SV,N)  { std::ostringstream os; os << (N); (SV) = newSVpv(os.str().c_str(), 0); }
+#  define CITY_GET64(SV)    strtoull(SvPV_nolen((SV), NULL, 0)
+#  define CITY_SET64(SV,N)  { std::ostringstream os; os << (N); (SV) = newSVpv(os.str().c_str(), 0); }
 #endif
 
 #define swab64(x) \
@@ -57,15 +58,15 @@ cityhash64(message, ...)
 			}
 
 			case 2: {
-				uint64 seed0 = CITY_GET128(ST(1));
+				uint64 seed0 = CITY_GET64(ST(1));
 
 				city = CityHash64WithSeed(msg, len, seed0);
 				break;
 			}
 
 			default: {
-				uint64 seed0 = CITY_GET128(ST(1));
-				uint64 seed1 = CITY_GET128(ST(2));
+				uint64 seed0 = CITY_GET64(ST(1));
+				uint64 seed1 = CITY_GET64(ST(2));
 
 				city = CityHash64WithSeeds(msg, len, seed0, seed1);
 				break;
@@ -73,7 +74,7 @@ cityhash64(message, ...)
 		}
 
 		if (!ix) {
-			CITY_SET128(RETVAL, city);
+			CITY_SET64(RETVAL, city);
 		} else {
 			uint64 ret = CITY_BIGENDIAN(city);
 			RETVAL = newSVpvn((const char *)&ret, sizeof ret);

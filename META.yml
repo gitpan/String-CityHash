@@ -25,7 +25,7 @@ resources:
   bugtracker: https://github.com/AlexBio/String-CityHash/issues
   homepage: http://metacpan.org/release/String-CityHash/
   repository: git://github.com/AlexBio/String-CityHash.git
-version: 0.06
+version: 0.07
 x_Dist_Zilla:
   plugins:
     -
