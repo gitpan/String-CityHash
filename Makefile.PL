@@ -8,7 +8,7 @@ use warnings;
 use ExtUtils::MakeMaker 6.30;
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'CityHash wrapper for Perl',
+  'ABSTRACT' => 'Perl bindings to the CityHash hash functions',
   'AUTHOR' => 'Alessandro Ghedini <alexbio@cpan.org>',
   'BUILD_REQUIRES' => {
     'File::Find' => '0',
@@ -23,9 +23,7 @@ my %WriteMakefileArgs = (
   'DISTNAME' => 'String-CityHash',
   'EXE_FILES' => [],
   'INC' => '-I.',
-  'LIBS' => [
-    '-lstdc++'
-  ],
+  'LIBS' => '-lstdc++',
   'LICENSE' => 'perl',
   'NAME' => 'String::CityHash',
   'OBJECT' => '$(O_FILES)',
@@ -35,7 +33,7 @@ my %WriteMakefileArgs = (
     'strict' => '0',
     'warnings' => '0'
   },
-  'VERSION' => '0.08',
+  'VERSION' => '0.09',
   'XSOPT' => '-C++',
   'test' => {
     'TESTS' => 't/*.t'

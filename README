@@ -1,9 +1,9 @@
 
 
 This archive contains the distribution String-CityHash,
-version 0.08:
+version 0.09:
 
-  CityHash wrapper for Perl
+  Perl bindings to the CityHash hash functions
 
 This software is copyright (c) 2011 by Alessandro Ghedini.
 

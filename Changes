@@ -1,9 +1,43 @@
 ==================================================
-Changes from 2011-07-08 00:00:00 +0000 to present.
+Changes from 2011-08-15 00:00:00 +0000 to present.
 ==================================================
 
 -----------------------------------------
-version 0.08 at 2012-07-07 12:56:31 +0000
+version 0.09 at 2012-08-14 11:36:25 +0000
+-----------------------------------------
+
+  Change: ceabf62e37e7d42ae1162b6b1daea86df8f32896
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-08-14 13:34:44 +0000
+
+    CityHash.pm: update short description 
+
+  Change: adb36df7a0e25d81bb3a05973177572062a417b9
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-07-23 20:25:54 +0000
+
+    CityHash.pm: minor doc fixes 
+
+  Change: 1a5b2dafa765655fd24eb2e5c3be60db7359f11f
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-07-23 16:21:18 +0000
+
+    MakeMaker.pm: LIBS should be just a string 
+
+  Change: 6ea3e244eff10741f71e58245f7d03267a0a26e8
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-07-23 12:22:48 +0000
+
+    CityHash.xs: re-order cityhash64 subs 
+
+  Change: 9d016fcbc88ebc2798badd12565fc1802b0e42fb
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-07-22 18:46:33 +0000
+
+    xs: remove newline after OUTPUT 
+
+-----------------------------------------
+version 0.08 at 2012-07-07 12:55:53 +0000
 -----------------------------------------
 
   Change: 38462027b1849e77c17a62d78d772a0af69b0d98
@@ -165,5 +199,5 @@ version 0.04 at 2011-08-19 10:21:21 +0000
     marcos 
 
 ================================================
-Plus 3 releases after 2011-07-08 00:00:00 +0000.
+Plus 3 releases after 2011-08-15 00:00:00 +0000.
 ================================================

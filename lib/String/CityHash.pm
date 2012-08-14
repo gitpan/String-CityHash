@@ -1,6 +1,6 @@
 package String::CityHash;
 {
-  $String::CityHash::VERSION = '0.08';
+  $String::CityHash::VERSION = '0.09';
 }
 
 use strict;
@@ -15,11 +15,11 @@ XSLoader::load('String::CityHash', $String::CityHash::VERSION);
 
 =head1 NAME
 
-String::CityHash - CityHash wrapper for Perl
+String::CityHash - Perl bindings to the CityHash hash functions
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 
@@ -81,18 +81,18 @@ are also hashed into the result.
 
 =head2 cityhash64_bits( $data [, $seed0 [, $seed1 ] ] )
 
-Likewise, but returns 8-byte binary string of hash in network byte order.
+Likewise, but returns a packed 8-byte binary string of hash in network byte order.
 
 =head2 cityhash128( $data )
 
-Generate a 128-bit hash for the given data. Returns list of the low and high
+Generate a 128-bit hash for the given data. Returns a list of the low and high
 64-bit portions of the hash. In scalar context returns only the low portion.
 
 =head2 cityhash128_bits( $data )
 
-Generate a 128-bit hash for the given data. Returns 16-byte binary string
+Generate a 128-bit hash for the given data. Returns a packed 16-byte binary string
 containing the low 64 bits then high 64 bits; each 8-byte portion is in network
-byte order. Extract with e.g. C<unpack 'Q>2'>.
+byte order. Extract with e.g. C<unpack 'QE<gt>2'>.
 
 =head1 ACKNOWLEDGMENTS
 

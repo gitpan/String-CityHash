@@ -17,8 +17,8 @@ override _build_MakeFile_PL_template => sub {
 override _build_WriteMakefile_args => sub {
 	return +{
 		%{ super() },
-#		LIBS	=> ['-lcityhash'],
-		LIBS	=> ['-lstdc++'],
+#		LIBS	=> '-lstrc++ -lcityhash',
+		LIBS	=> '-lstdc++',
 		INC	=> '-I.',
 		XSOPT	=> '-C++',
 		CC	=> 'g++',

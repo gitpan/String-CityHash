@@ -80,8 +80,23 @@ cityhash64(message, ...)
 			RETVAL = newSVpvn((const char *)&ret, sizeof ret);
 		}
 
-	OUTPUT:
-		RETVAL
+	OUTPUT: RETVAL
+
+void
+cityhash128(message)
+	SV *message
+
+	PROTOTYPE: $
+	PPCODE:
+		STRLEN len;
+		const char *msg = SvPVbyte(message, len);
+
+		uint128 city = CityHash128(msg, len);
+
+		mXPUSHu(Uint128Low64(city));
+
+		if (GIMME == G_ARRAY)
+			mXPUSHu(Uint128High64(city));
 
 SV *
 cityhash128_bits(message)
@@ -101,21 +116,4 @@ cityhash128_bits(message)
 
 		RETVAL = newSVpvn((const char *)&ret, sizeof ret);
 
-	OUTPUT:
-		RETVAL
-
-void
-cityhash128(message)
-	SV *message
-
-	PROTOTYPE: $
-	PPCODE:
-		STRLEN len;
-		const char *msg = SvPVbyte(message, len);
-
-		uint128 city = CityHash128(msg, len);
-
-		mXPUSHu(Uint128Low64(city));
-
-		if (GIMME == G_ARRAY)
-			mXPUSHu(Uint128High64(city));
+	OUTPUT: RETVAL
