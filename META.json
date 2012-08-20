@@ -24,6 +24,7 @@
          "requires" : {
             "Exporter" : "0",
             "XSLoader" : "0",
+            "perl" : "v5.10.0",
             "strict" : "0",
             "warnings" : "0"
          }
@@ -39,16 +40,16 @@
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/AlexBio/p5-String-CityHash/issues"
+         "web" : "https://github.com/ghedo/p5-String-CityHash/issues"
       },
       "homepage" : "http://metacpan.org/release/String-CityHash/",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/AlexBio/p5-String-CityHash.git",
-         "web" : "https://github.com/AlexBio/p5-String-CityHash"
+         "url" : "git://github.com/ghedo/p5-String-CityHash.git",
+         "web" : "https://github.com/ghedo/p5-String-CityHash"
       }
    },
-   "version" : "0.09",
+   "version" : "0.10",
    "x_Dist_Zilla" : {
       "plugins" : [
          {

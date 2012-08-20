@@ -15,7 +15,7 @@
 #else
 #  include <stdlib.h>
 #  include <sstream>
-#  define CITY_GET64(SV)    strtoull(SvPV_nolen((SV), NULL, 0)
+#  define CITY_GET64(SV)    strtoull(SvPV_nolen((SV)), NULL, 0)
 #  define CITY_SET64(SV,N)  { std::ostringstream os; os << (N); (SV) = newSVpv(os.str().c_str(), 0); }
 #endif
 
@@ -91,12 +91,16 @@ cityhash128(message)
 		STRLEN len;
 		const char *msg = SvPVbyte(message, len);
 
+		SV  *hi, *lo;
 		uint128 city = CityHash128(msg, len);
 
-		mXPUSHu(Uint128Low64(city));
+		CITY_SET64(lo, Uint128Low64(city));
+		mXPUSHs(lo);
 
-		if (GIMME == G_ARRAY)
-			mXPUSHu(Uint128High64(city));
+		if (GIMME == G_ARRAY) {
+			CITY_SET64(hi, Uint128High64(city));
+			mXPUSHs(hi);
+		}
 
 SV *
 cityhash128_bits(message)

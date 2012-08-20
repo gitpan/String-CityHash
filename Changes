@@ -1,9 +1,56 @@
 ==================================================
-Changes from 2011-08-15 00:00:00 +0000 to present.
+Changes from 2011-08-21 00:00:00 +0000 to present.
 ==================================================
 
 -----------------------------------------
-version 0.09 at 2012-08-14 11:36:25 +0000
+version 0.10 at 2012-08-20 10:19:15 +0000
+-----------------------------------------
+
+  Change: ae31eef8440fc9cada46e3148d6456ac3ba18e55
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-08-20 12:15:32 +0000
+
+    CityHash.xs: portably return 64-bit ints in cityhash128 
+
+  Change: bc5df3a7e66365d038e47051eac448cdd8718253
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-08-20 12:04:48 +0000
+
+    01-cityhash64.t: do not use Q format in pack since it is not portable 
+
+  Change: c96d8ef36e212dd05bc7b7399943f9d3cd25f3e3
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-08-20 11:55:20 +0000
+
+    t: rename 01-cityhash128.t -> 02-cityhash128.t 
+
+  Change: f3b659d49b3ba4bed3e797b7b5a155548478064e
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-08-20 11:54:12 +0000
+
+    01-cityhash128.t: do not use Q format in pack since it is not
+    portable 
+
+  Change: 326f028201910cd758aa953dab700bdb9421d6bd
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-08-20 11:21:12 +0000
+
+    CityHas.xs: fix SvPV_nolen call 
+
+  Change: 105947f09fb374aa369cc00d7f0a20d1a3ebb4d9
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-08-20 11:14:29 +0000
+
+    add travis ci config 
+
+  Change: 706d7cca06ee8a951885ee17ccd049448bd85384
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-08-19 12:36:32 +0000
+
+    CityHash.pm: require minimum perl version to avoid test failures 
+
+-----------------------------------------
+version 0.09 at 2012-08-14 11:34:44 +0000
 -----------------------------------------
 
   Change: ceabf62e37e7d42ae1162b6b1daea86df8f32896
@@ -173,31 +220,6 @@ version 0.05 at 2011-10-15 18:07:58 +0000
 
     fix code example in SYNOPSIS 
 
------------------------------------------
-version 0.04 at 2011-08-19 10:21:21 +0000
------------------------------------------
-
-  Change: d243bfb2d29b23344deb1f96846d36e91831e28a
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-08-19 12:21:21 +0000
-
-    bump version 
-
-  Change: 6a944872187dd2d1d9551cb833963ff82fa5f6c4
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-08-19 03:20:13 +0000
-
-    Merge pull request #1 from nevostruev/master
-
-    Couple of small fixes 
-
-  Change: b407f114377d399607a7ef808adedda1c511d07b
-  Author: Ivan Nevostruev <halyava@gmail.com>
-  Date : 2011-08-18 18:17:15 +0000
-
-    adding perl prototypes, fix conflict between some perl and stdc++
-    marcos 
-
 ================================================
-Plus 3 releases after 2011-08-15 00:00:00 +0000.
+Plus 4 releases after 2011-08-21 00:00:00 +0000.
 ================================================

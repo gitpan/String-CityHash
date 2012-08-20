@@ -19,13 +19,14 @@ name: String-CityHash
 requires:
   Exporter: 0
   XSLoader: 0
+  perl: v5.10.0
   strict: 0
   warnings: 0
 resources:
-  bugtracker: https://github.com/AlexBio/p5-String-CityHash/issues
+  bugtracker: https://github.com/ghedo/p5-String-CityHash/issues
   homepage: http://metacpan.org/release/String-CityHash/
-  repository: git://github.com/AlexBio/p5-String-CityHash.git
-version: 0.09
+  repository: git://github.com/ghedo/p5-String-CityHash.git
+version: 0.10
 x_Dist_Zilla:
   plugins:
     -

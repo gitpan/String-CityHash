@@ -1,7 +1,9 @@
 package String::CityHash;
 {
-  $String::CityHash::VERSION = '0.09';
+  $String::CityHash::VERSION = '0.10';
 }
+
+use v5.10;
 
 use strict;
 use warnings;
@@ -19,7 +21,7 @@ String::CityHash - Perl bindings to the CityHash hash functions
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 SYNOPSIS
 
