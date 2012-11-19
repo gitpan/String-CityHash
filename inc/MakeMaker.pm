@@ -7,9 +7,14 @@ extends 'Dist::Zilla::Plugin::MakeMaker::Awesome';
 
 override _build_MakeFile_PL_template => sub {
 	my ($self) = @_;
-	my $template  = "use Devel::CheckLib;\n";
-	$template .= "check_lib_or_exit(lib => 'stdc++');\n";
-#	$template .= "check_lib_or_exit(lib => 'cityhash');\n";
+
+	my $template = <<'TEMPLATE';
+use Devel::CheckLib;
+
+check_lib_or_exit(lib => 'stdc++');
+#check_lib_or_exit(lib => 'cityhash');
+
+TEMPLATE
 
 	return $template.super();
 };

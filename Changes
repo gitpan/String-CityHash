@@ -1,225 +1,56 @@
-==================================================
-Changes from 2011-08-21 00:00:00 +0000 to present.
-==================================================
+Revision history for String-CityHash
 
------------------------------------------
-version 0.10 at 2012-08-20 10:19:15 +0000
------------------------------------------
+0.11      2012-11-19 14:03:11 Europe/Rome
 
-  Change: ae31eef8440fc9cada46e3148d6456ac3ba18e55
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-08-20 12:15:32 +0000
+ - Add a proper Changes file
+ - Update city.cc to version 1.1.0 (incompatible change):
+    + Note that hashes generated with the new version of the library are
+      different from those generated using the old version.
+ - Add cityhash32() function
 
-    CityHash.xs: portably return 64-bit ints in cityhash128 
+0.10      2012-08-20 10:19:28 Europe/Rome
 
-  Change: bc5df3a7e66365d038e47051eac448cdd8718253
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-08-20 12:04:48 +0000
+ - Require minimum perl version to avoid test failures
+ - Do not use pack() Q format in tests since it is not portable
+ - Portably return 64-bit ints in cityhash128
 
-    01-cityhash64.t: do not use Q format in pack since it is not portable 
+0.09      2012-08-14 11:36:54 Europe/Rome
 
-  Change: c96d8ef36e212dd05bc7b7399943f9d3cd25f3e3
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-08-20 11:55:20 +0000
+ - Documentation fixes (no functional changes)
 
-    t: rename 01-cityhash128.t -> 02-cityhash128.t 
+0.08      2012-07-07 12:56:50 Europe/Rome
 
-  Change: f3b659d49b3ba4bed3e797b7b5a155548478064e
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-08-20 11:54:12 +0000
+ - Update GitHub repository name
 
-    01-cityhash128.t: do not use Q format in pack since it is not
-    portable 
+0.07      2012-07-06 09:50:11 Europe/Rome
 
-  Change: 326f028201910cd758aa953dab700bdb9421d6bd
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-08-20 11:21:12 +0000
+ - Include ppport.h
+ - Add export tags :all, :cityhash64 and :cityhash128
 
-    CityHas.xs: fix SvPV_nolen call 
+0.06      2012-07-02 17:27:42 Europe/Rome
 
-  Change: 105947f09fb374aa369cc00d7f0a20d1a3ebb4d9
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-08-20 11:14:29 +0000
+ - Provide *_bits() functions (GH#2) (thanks, @chipdude!)
+ - Return only 64 bits at a time, and as UVs when possible (GH#2) (thanks, @chipdude!)
 
-    add travis ci config 
+0.05      2011-10-17 20:37:52 Europe/Rome
 
-  Change: 706d7cca06ee8a951885ee17ccd049448bd85384
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-08-19 12:36:32 +0000
+ - Update city.cc to version 1.0.3
+ - Fix the example in SYNOPSIS
 
-    CityHash.pm: require minimum perl version to avoid test failures 
+0.04      2011-08-19 10:21:41 Europe/Rome
 
------------------------------------------
-version 0.09 at 2012-08-14 11:34:44 +0000
------------------------------------------
+ - Add prototypes (GH#1) (thanks, @nevostruev!)
+ - Fix conflict between perl and stdc++ macros (GH#1) (thanks, @nevostruev!)
 
-  Change: ceabf62e37e7d42ae1162b6b1daea86df8f32896
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-08-14 13:34:44 +0000
+0.03      2011-06-07 15:09:43 Europe/Rome
 
-    CityHash.pm: update short description 
+ - Improve portability of cityhash64()
 
-  Change: adb36df7a0e25d81bb3a05973177572062a417b9
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-23 20:25:54 +0000
+0.02      2011-06-05 19:06:24 Europe/Rome
 
-    CityHash.pm: minor doc fixes 
+ - Add cityhash128()
+ - Documentation fixes (no functional changes)
 
-  Change: 1a5b2dafa765655fd24eb2e5c3be60db7359f11f
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-23 16:21:18 +0000
+0.01      2011-06-04 11:02:05 Europe/Rome
 
-    MakeMaker.pm: LIBS should be just a string 
-
-  Change: 6ea3e244eff10741f71e58245f7d03267a0a26e8
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-23 12:22:48 +0000
-
-    CityHash.xs: re-order cityhash64 subs 
-
-  Change: 9d016fcbc88ebc2798badd12565fc1802b0e42fb
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-22 18:46:33 +0000
-
-    xs: remove newline after OUTPUT 
-
------------------------------------------
-version 0.08 at 2012-07-07 12:55:53 +0000
------------------------------------------
-
-  Change: 38462027b1849e77c17a62d78d772a0af69b0d98
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-07 14:55:53 +0000
-
-    dist.ini: update repo name 
-
------------------------------------------
-version 0.07 at 2012-07-06 09:48:33 +0000
------------------------------------------
-
-  Change: 15f25eccbaf6b727686a570553fd21f3d959c0e1
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-06 11:48:33 +0000
-
-    CityHash.pm: add export tags :all, :cityhash64 and :cityhash128 
-
-  Change: 9e5e1fe69976e316d4916aa6cd67d7b75489b9b7
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-06 11:41:40 +0000
-
-    CityHash.pm: minor fix in SYNOPSIS 
-
-  Change: ad114a229df5090d090bac13e300b7ad4ae0bd15
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-06 11:36:49 +0000
-
-    CityHash.xs: rename CITY_{G,S}ET128 -> CITY_{G,S}ET64 
-
-  Change: f11211ead8200707df7ac30eb5aee2b5268f12e6
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-06 11:35:03 +0000
-
-    CityHash.xs: include ppport.h 
-
------------------------------------------
-version 0.06 at 2012-07-02 16:03:32 +0000
------------------------------------------
-
-  Change: 217c70a71515f0ff513a2676d222318197ce31fe
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-02 18:03:32 +0000
-
-    CityHash.pm: cosmetics fixes 
-
-  Change: d748f2f6c3e189178cef2f837303527dd4c3da33
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-02 18:01:20 +0000
-
-    t: add more tests 
-
-  Change: 7301528835e55afa89308917f3b652c66a874ea8
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-02 15:04:47 +0000
-
-    CityHash.xs: include sstream when needed 
-
-  Change: 6d64f4bff9e5c1f55c6e4c1cbbfc5bc9cbba1525
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-02 12:04:19 +0000
-
-    dist.ini: use Git::NextVersion plugin 
-
-  Change: b25fa210bb4c2f19602a23e4238a8f53c699f686
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-02 12:03:29 +0000
-
-    CityHash.pm: add ACKNOWLEDGMENT regarding cityhash128 changes 
-
-  Change: 955582a97c2b4bbf77ca5ef274c32721ee93e4be
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-02 11:59:53 +0000
-
-    CityHash.pm: fix exported subs names 
-
-  Change: a61e02a540e7c33783e03aed41b46afa078f3504
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-02 11:59:53 +0000
-
-    CityHash.pm: rename cityhash128_pair -> cityhash128 
-
-  Change: 1efa0b1a090835e5e2620c1deef53848b1baaaad
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-02 11:52:27 +0000
-
-    CityHash.pm: minor style fixes 
-
-  Change: e67d1110bc939a726de5c550ec3f527543a8af5c
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-02 11:46:28 +0000
-
-    CityHash.xs: minor style fixes 
-
-  Change: 097baacc9f998a07efb6907adb3c6411e6292c0b
-  Author: Chip Salzenberg <chip@topsy.com>
-  Date : 2012-06-25 07:19:19 +0000
-
-    switch to network byte order for _bits return values 
-
-  Change: a5838cc6348cc5adf17b5d98e924054b239d266a
-  Author: Chip Salzenberg <chip@topsy.com>
-  Date : 2012-06-24 20:44:05 +0000
-
-    Return useful values: only 64 bits at a time, and as UVs when
-    possible 
-
------------------------------------------
-version 0.05 at 2011-10-15 18:07:58 +0000
------------------------------------------
-
-  Change: ff51e744741a572f12fd63d5122ea3f455705618
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-10-15 20:07:58 +0000
-
-    bump version 
-
-  Change: 20c2ea87469f79e8ff0853fae5c064f068635f8d
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-10-15 19:59:17 +0000
-
-    update city.cc to version 1.0.3 
-
-  Change: 67a5cfed3c803bc7b1a8dbe71eb4babffb7167e5
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-09-11 15:34:01 +0000
-
-    remove cruft tests 
-
-  Change: 006b579cdfab38704456254ccf0ca9b5c5774eac
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-08-30 12:07:48 +0000
-
-    fix code example in SYNOPSIS 
-
-================================================
-Plus 4 releases after 2011-08-21 00:00:00 +0000.
-================================================
+ - Initial version

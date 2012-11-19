@@ -40,6 +40,19 @@
 MODULE = String::CityHash		PACKAGE = String::CityHash
 
 SV *
+cityhash32(message)
+	SV *message
+
+	CODE:
+		STRLEN len;
+		const char *msg = SvPVbyte(message, len);
+
+		uint32 city = CityHash32(msg, len);
+		RETVAL = newSVuv(city);
+
+	OUTPUT: RETVAL
+
+SV *
 cityhash64(message, ...)
 	SV *message
 

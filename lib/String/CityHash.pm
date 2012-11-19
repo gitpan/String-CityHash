@@ -1,6 +1,6 @@
 package String::CityHash;
 {
-  $String::CityHash::VERSION = '0.10';
+  $String::CityHash::VERSION = '0.11';
 }
 
 use v5.10;
@@ -21,7 +21,7 @@ String::CityHash - Perl bindings to the CityHash hash functions
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 SYNOPSIS
 
@@ -62,6 +62,7 @@ C<cityhash128> and C<cityhash128_bits> on request.
 =cut
 
 our @EXPORT_OK = qw(
+	cityhash32
 	cityhash64
 	cityhash64_bits
 	cityhash128
@@ -70,11 +71,16 @@ our @EXPORT_OK = qw(
 
 our %EXPORT_TAGS = (
 	all         => [@EXPORT_OK],
+	cityhash32  => [qw(cityhash32)],
 	cityhash64  => [qw(cityhash64 cityhash64_bits)],
 	cityhash128 => [qw(cityhash128 cityhash128_bits)]
 );
 
 =head1 SUBROUTINES
+
+=head2 cityhash32( $data )
+
+Generate a 32-bit hash for the given data.
 
 =head2 cityhash64( $data [, $seed0 [, $seed1 ] ] )
 
